@@ -1,0 +1,34 @@
+
+{% extends 'about/website.html' %}
+{% block content %}
+{% include 'about/hero_section_single.html' with hero='Merapi' %}
+{% include 'about/information_section.html' with judulsection='Merapi' isikonten='Gunung Merapi merupakan salah satu gunung api teraktif di Indonesia dengan ketinggian 2.930 mdpl (2010). Gunung ini memiliki catatan letusan sejak tahun 1600, berada pada titik Latitude -7.54130669258	 dan Longitude 110.44627086700. Lereng sisi selatan berada dalam administrasi kabupaten Sleman, Daerah Istimewa Yogyakarta. Dan sisanya berada dalam wilayah Provinsi Jawa Tengah yaitu Kabupaten Magelang di sisi barat, Kabupaten Boyolali di sisi utara dan timur, serta kabupaten Klaten di sisi tenggara. Kawasan hutan di sekitar puncak menjadi kawasan Taman Nasional Gunung Merapi (TNGM) sejak 2004'%}
+{% load static %}
+<section id="about" class="about">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="{% static 'assets/img/aboutmerapi.png' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+          <!-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3> -->
+          <!-- <p class="fst-italic">
+            Try not to become a man of success, but rather try to become a man of value <br>
+            - Albert Einstein
+          </p> -->
+          <!-- <ul>
+            <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+            <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+          </ul> -->
+          <p>
+            Gunung berbentuk strato tersebut sangat berbahaya karena menurut catatan, telah mengalami erupsi (puncak keaktifan) setiap dua hingga lima tahun sekali dan dikelilingi oleh permukiman yang sangat padat. Sejak 1548 gunung di bagian tengah Pulau Jawa tersebut sudah meletus sebanyak 68 kali. <br><br>
+            Kota Magelang dan Kota Yogyakarta adalah kota besar terdekat, berjarak di bawah 30 km dari puncak. Di lerengnya masih terdapat permukiman sampai ketinggian 1700 meter dan hanya berjarak empat kilometer dari puncak. Tingginya tingkat aktivitas Merapi menjadikannya salah satu dari enam belas gunung api dunia yang termasuk dalam proyek Gunung Api Dekade Ini
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->
+{% endblock content %}

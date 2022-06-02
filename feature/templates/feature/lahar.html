@@ -1,0 +1,118 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcano Hazard | Lahar</title>
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/volcano_mountain.png' %}" rel="icon">
+    <link href="{% static 'assets/img/volcano_mountain.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- leaflet css  -->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.0/dist/leaflet.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.0/dist/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="{% static 'lahar/css/Control.FullScreen.css' %}" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'lahar/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'home/header.html' %}
+    {% include 'about/hero_section_single.html' with hero='Pesebaran Lahar' %}
+    <section id="about" class="about">
+        <div class="container">
+      
+          <div class="section-title">
+            <h2>Lahar</h2>
+          </div>
+      
+          <div class="row">
+            <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+              <p class="text-justify">
+                Lahar adalah lava yang mengalir, dan bercampur dengan air, lumpur, dan batuan- batuan. selain itu, lahar mengandung pasir dan kerikil. Kapasitas dan kecepatan aliran lahar tergantung dari curah hujan. Jika curah hujan meningkat, maka kapasitas dan kecepatan dari lahar juga akan meningkat. Agar tidak membahayakan, biasanya disetiap gunung api akan dibuat saluran agar lahar tidak melebar kemana- mana. Lahar yang berkapsitas besar, mampu menutupi sebagian dataran di permukaan bumi. lahar dibagi menjadi dua, yaitu lahar kecil dan lahar lebar. Lahar kecil adalah aliran lahar yang memiliki lebar kurang dari 1 meter, dan mengalir hanya beberapa meter per detik. Sedangkan lahar besar adalah, lahar yang memiliki lebar lebih dari satu meter. Lahar ini bisa bergerak dengan kecepatan lebih dari 22 mph, bahkan dapat mencapai 60 mph atau setara dengan 100 km per jam. Jarak tempuh dari lahar ini dapat mencapai 30 km.
+                <br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2>Penyebab Lahar Terbentuk</h2>
+          </div>
+          <div class="row">
+            <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+              <p class="text-justify">
+                Lahar berasal dari lava yang mengalir. Karena lava bersifat cairan, maka lava akan bergerak menuju tempat yang lebih rendah. Dalam prosesnya lava akan bercampur dengan air atau lumpur, sehingga menjadi lahar. Lahar dapat terjadi akibat dari 5 penyebab. Penyebab tersebut adalah:
+                <br>
+              </p>
+              <ul>
+                <li>
+                    1. Lava yang mengalir bercampur dengan salju atau gletser <br>
+                    2. Lava yang tercampur dengan tanah basah atau lumpur <br>
+                    3. Lava yang tercampur dengan air hujan yang mengguyur <br>
+                    4. Lava tercampru dengan air sungai <br>
+                    5. Terjadinya longsor vulkanik, yang menyebabkan lava terjatuh ke air 
+                </li>
+              </ul>
+              <p>Lava dan lahar adalah salah satu bentuk materi yang dikeluarkan oleh gunung api. Meskipun lahar tidak sepanas lava, namun tingkat kerusakan yang ditimbulkan sama besarnya.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2>Peta Persebaran Lahar</h2>
+          </div>
+            <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+                <div id="map">
+                    <div class="leaflet-control coordinate"></div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+    {% include 'home/footer.html' %}
+</body>
+
+</html>
+
+<!-- leaflet js  -->
+<script src="https://unpkg.com/leaflet@1.7.0/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+<script src="{% static 'lahar/js/Control.FullScreen.js' %}"></script>
+<script src="{% static 'lahar/data/persebaran1.js' %}"></script>
+<script src="{% static 'lahar/data/persebaran2.js' %}"></script>
+<script src="{% static 'lahar/data/persebaran3.js' %}"></script>
+<script src="{% static 'lahar/data/persebaran4.js' %}"></script>
+<script src="{% static 'lahar/data/persebaran5.js' %}"></script>
+<script src="{% static 'lahar/data/persebaran6.js' %}"></script>
+
+<script src="{% static 'lahar/data/Kab_Bantul.js' %}"></script>
+<script src="{% static 'lahar/data/Kab_Gunungkidul.js' %}"></script>
+<script src="{% static 'lahar/data/Kab_KulonProgo.js' %}"></script>
+<script src="{% static 'lahar/data/Kab_Sleman.js' %}"></script>
+<script src="{% static 'lahar/data/Kota_Yogyakarta.js' %}"></script>
+<script src="{% static 'lahar/js/script.js' %}"></script>

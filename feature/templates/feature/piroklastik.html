@@ -1,0 +1,156 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Volcano Hazard - Capstone Team</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/volcano_mountain.png' %}" rel="icon">
+    <link href="{% static 'assets/img/volcano_mountain.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Green - v4.7.0
+  * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    {% include 'home/header.html' %}
+    {% include 'about/hero_section_single.html' with hero='Piroklastik' %}
+    <main id="main">
+        <!-- ======= Information Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Persebaran Piroklastik</h2>
+                </div>
+                <div class="row">
+                    <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+                        <p class="text-justify">
+                            Piroklastik (pyroclastic) merupakan hasil erupsi berupa campuran batuan dan gas. Tepra
+                            merupakan salah satu material piroklastik yang terdispersi ke udara. Tepra dapat disebut
+                            sebagai abu vulkanik dalam bentuk debu, kerikil, dan lapilli. Terdapat tiga macam jenis
+                            piroklastik yang dibedakan berdasarkan hasil endapannya, yaitu: </p>
+                        <ul>
+                            <li>
+                                <p class="paragraf-bold">Jatuhan Piroklastik :</p>
+                                <p>
+                                    Jatuhan piroklastik (pyroclastic fall) adalah piroklastik yang dikeluarkan ke
+                                    udara karena ledakan vulkanik dan jatuh ke permukaan. Piroklastik jatuh
+                                    membentuk gumpalan asap abu yang tinggi, ketika energi ledakan melemah abu akan
+                                    dibawa mengikuti arah angin dan kemudian jatuh
+                                    kembali ke tanah. <br><br>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraf-bold">Aliran Piroklastik :</p>
+                                <p>
+                                    Aliran piroklastik (pyroclastic flow) merupakan piroklastik yang berbentuk fragmen
+                                    batuan dan gas dengan konsentrasi partikel yang relatif tinggi. Aliran piroklastik
+                                    mengalir dengan kecepatan tinggi di sepanjang lereng gunung berapi hingga mencapai
+                                    200 m/s. Aliran piroklastik dapat disebabkan oleh beberapa penyebab, seperti
+                                    runtuhnya
+                                    gumpalan asap yang dikeluarkan, longsoran kubah lava atau lidah lava. Aliran
+                                    piroklastik
+                                    dikendalikan oleh gravitasi dan umumnya mengalir melewati daerah atau lembah yang
+                                    lebih
+                                    rendah dengan suhu hingga> 800 ° C.<br><br>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="paragraf-bold">Gelombang Piroklastik :</p>
+                                <p>
+                                    Gelombang piroklastik (pyroclastic surge) merupakan piroklastik dengan massa aliran
+                                    gas
+                                    turbulen dan fragmen (puing-puing) batuan yang dikeluarkan selama letusan gunung
+                                    berapi
+                                    berlangsung. Gelombang piroklastik hampir serupa dengan aliran piroklastik namun
+                                    mempunyai
+                                    kerapatan atau konsentrasi partikel yang relatif rendah (mengandung rasio gas
+                                    terhadap batuan
+                                    yang jauh lebih tinggi).<br><br>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container-fluid py-5">
+                    <div class="section-title">
+                        <h2>Simulasi Piroklastik</h2>
+                    </div>
+                    <p>Nah, disini kami akan menampilkan simulasi kemungkinan persebaran aliran piroklastik dari Gunung
+                        Merapi berdasarkan nilai parameter yang dapat kamu tentukan sendiri. Selamat mencoba!</p>
+                        
+                    <div class="mt-5 d-block mx-auto" style="width: 700px; border: solid; padding: 10px; border-radius: 9px;">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Arah Mata Angin</span>
+                            </div>
+                            <select class="form-select" id="inputGroupSelect">
+                                <option selected>Pilih Arah Mata angin</option>
+                                <option value="1">Timur</option>
+                                <option value="2">Tenggara</option>
+                                <option value="3">Selatan</option>
+                                <option value="4">Barat Daya</option>
+                                <option value="5">Barat</option>
+                                <option value="6">Barat Laut</option>
+                                <option value="7">Utara</option>
+                                <option value="8">Timur Laut</option>
+                              </select>
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-dark" type="button" style>Simulasikan</button>
+                              </div>
+                        </div>
+                        <img src="../../../static/piroklastik/image 7.png" class="img-fluid"
+                            alt="Hasil Simulasi akan tersedia disini">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Information Section -->
+
+
+    </main><!-- End #main -->
+    {% include 'home/footer.html' %}
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

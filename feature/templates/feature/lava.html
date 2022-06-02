@@ -1,0 +1,157 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Volcano Hazard - Capstone Team</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/volcano_mountain.png' %}" rel="icon">
+    <link href="{% static 'assets/img/volcano_mountain.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Green - v4.7.0
+  * Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    {% include 'home/header.html' %}
+    {% include 'about/hero_section_single.html' with hero='Lava' %}
+    <main id="main">
+        <!-- ======= Information Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Informasi Lava Merapi</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+                        <p class="text-justify">
+                            Gunung berbentuk strato tersebut sangat berbahaya karena menurut catatan, telah mengalami
+                            erupsi (puncak keaktifan) setiap dua hingga lima tahun sekali dan dikelilingi oleh
+                            permukiman yang sangat padat. Sejak 1548 gunung di bagian tengah Pulau Jawa tersebut sudah
+                            meletus sebanyak 68 kali. Kota Magelang dan Kota Yogyakarta adalah kota besar terdekat,
+                            berjarak di bawah 30 km dari puncak. Di lerengnya masih terdapat permukiman sampai
+                            ketinggian 1700 meter dan hanya berjarak empat kilometer dari puncak. Tingginya tingkat
+                            aktivitas Merapi menjadikannya salah satu dari enam belas gunung api dunia yang termasuk
+                            dalam proyek Gunung Api Dekade Ini.
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Information Section -->
+
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Simulasi Lava</h2>
+                </div>
+                <div class="row">
+                    <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+                        <ul>
+                            <li>
+                                1. Masukkan parameter (Kosongkan Jika ingin menggunakan parameter default)<br>
+                                <form action="{% url 'feature:lava' %}" method='POST'>
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Volume</label>
+                                        <div class="input-group mb-3">
+                                            <input type="number" class="form-control" placeholder="Ketik disini..."
+                                                aria-label="" aria-describedby="basic-addon2" name="Viskositas">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">㎥</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Volume</label>
+                                        <div class="input-group mb-3">
+                                            <input type="number" class="form-control" placeholder="Ketik disini..."
+                                                aria-label="" aria-describedby="basic-addon2" name="Volume">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">℃</span>
+                                            </div>
+                                        </div>
+                                        <small id="emailHelp" class="form-text text-muted">Jalur persebaran lava
+                                            bergantung pada beberapa parameter seperti volume magma dan suhu
+                                            magma</small>
+                                    </div><br>
+
+                                2. Lakukan Simulasi <br>
+
+                                    <button type="submit" class="btn btn-primary">Jalankan simulasi</button>
+                                </form>
+
+                                3. Tunggu sesaat, hasil simulasi akan ditampilkan pada peta dibawah <br><br>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container-fluid py-5">
+                    <h2>Hasil Simulasi</h2>
+                    <small id="emailHelp" class="form-text text-muted">Prediksi aliran lava akan ditunjukkan dengan tinta berwarna merah pada peta</small>
+                    <div class="mt-5 d-block mx-auto" style="width: 500px; border: solid;">
+                        {% if map is not none %}
+                        <img src="../../static/lava/DIY_result.JPG" class="img-fluid" alt="Hasil simulasi" style="width: 100%; height: auto;">
+                        {% else %}
+                        <p>
+                            Simulasi belum dilakukan
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main><!-- End #main -->
+    {% include 'home/footer.html' %}
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

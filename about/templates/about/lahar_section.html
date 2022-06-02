@@ -1,0 +1,99 @@
+{% load static %}
+
+<!-- ======= Lahar Section ======= -->
+
+<section id="about" class="about">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Lahar</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+        <p class="text-justify">
+          Pada fitur ini, sudah disediakan persebaran lahar pada volume tertentu pada peta 2D yang sudah dihitung
+          sebelumnya dengan menggunakan tools bernama LaharZ pada Arcgis Arcmap. 1.10 (Versi Stabil untuk LaharZ).
+          Penggunakan tools LaharZ menggunakan data DEM (Digital Elevation Model) sebagai input dan berdasarkan data DEM
+          tersebut akan dilakukan perhitungan untuk mengindentifikasi arah aliran, akumulasi aliran dan lain lain. <br>
+          Sebelum dilakukan perhitungan persebaran lahar, terlebih dahulu melewati 4 langkah berikut : </p>
+        <ul>
+          <p class="paragraf-bold">Surface Hydrology Rasters : <br></p>
+
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2">
+              <img src="{% static 'assets/img/about_website/lahar_hydrologyrasters.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+              <p>
+                Dengan jumlah gunung berapi aktif sekitar 127, Indonesia mempunyai kemungkinan besar risiko terdampak
+                bencana gunung berapi. <br>
+                Terdapat salah satu gunung berapi yang letaknya berada di perbatasan Provinsi Jawa Tengah dan Daerah
+                Istimewa Yogyakarta, yaitu Gunung Merapi. Gunung Merapi termasuk ke dalam nominasi gunung teraktif di
+                Indonesia berdasarkan catatan aktivitas vulkaniknya. Beberapa bulan ini, Gunung Merapi mulai
+                mengeluarkan aktivitasnya meskipun masih di tahap aman. Namun hal ini tetap menjadi kekhawatiran bersama
+                mengingat pada tahun 2010 lalu terjadi letusan yang menimbulkan banyak korban jiwa. <br>
+                Oleh karena itu, untuk meminimalisir akibat dari bencana Gunung Merapi kami mengembangkan sebuah website
+                sistem informasi sebagai bentuk media informasi dan edukasi tentang persebaran lava, lahar, dan
+                piroklastik. <br> <br>
+              </p>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+        <ul>
+          <p class="paragraf-bold">Hazard Zone Proximal : <br></p>
+
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2">
+              <img src="{% static 'assets/img/about_website/lahar_hazardzoneproximal.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+              <p>
+                Berfungsi untuk membuat batas zona bahaya proksimal yang membentang dari puncak. Tool ini akan menentukan daerah yang rentan terhadap beberapa jenis bahaya seperti tanah longsor dan longsoran puing-puing. Perhitungannya dengan cara mengidentifikasi semua koordinat X dan Y pada data DEM. Hasil keluaran dari Hazard Zone Proximal ini adalah sebuah data DEM dengan layer berisi pesebaran zona yang rentan terhadap bahaya diatas dan genangan lahar.
+              </p>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+        <ul>
+          <p class="paragraf-bold">Lahar Distal Zone : <br></p>
+
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2">
+              <img src="{% static 'assets/img/about_website/lahar_lahardistalzone.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+              <p>
+                Tool ini berfungsi sebagai menghitung area genangan potensial untuk setiap drainase dari koordinat X dan Y yang sudah ditentukan sebelumnya berdasarkan volume yang sudah di tentukan sebelumnya. Volume yang diinput bisa menerima hingga 3 jenis volume berbeda, dan akan diplot dengan 3 plot layer.
+              </p>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto pt-5 pt-lg-0 order-2 order-lg-1 content">
+        <p class="paragraf-bold">Lahar Distal with Confidence Level :</p>
+        <p class="text-justify">
+          Tool ini mirip dengan tool sebelumnya namun pada bagian ini pengguna hanya dapat menginputkan data 1 data volume dengan tingkat kepercayaan antara 50, 70, 80, 90 , 95, 97.5, 99. </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- End Lahar Section -->
